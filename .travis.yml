@@ -6,10 +6,10 @@ env:
 
 stages:
   - name: default_job
-    if: env(BUILD_ACTION) = default
+    if: env("BUILD_ACTION") = default
   
   - name: example_job
-    if: env(BUILD_ACTION) = example
+    if: env("BUILD_ACTION") = example
 
 jobs:
   include:
