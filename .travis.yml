@@ -1,0 +1,23 @@
+language: minimal
+
+env:
+  global:
+    - BUILD_ACTION=default
+
+stages:
+  - name: default_job
+    if: env(BUILD_ACTION) = default
+  
+  - name: example_job
+    if: env(BUILD_ACTION) = example
+
+jobs:
+  include:
+    - stage: default_job
+      script:
+        - echo "This is the default job"
+    
+    
+    - stage: example_job
+      script:
+        - echo "This is the example job"
