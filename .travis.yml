@@ -15,11 +15,6 @@ jobs:
       script:
         - echo "This is the default job for push"
     
-    - stage: default_job_pr
-      if: type = pull_request AND env("BUILD_ACTION") = default
-      script:
-        - echo "This is the default job for PR"
-    
     - stage: example_job
       if: env("BUILD_ACTION") = example
       script:
